@@ -33,20 +33,15 @@ class MapState extends State<MapComponent> {
               var target = LatLng(position.latitude, position.longitude);
               print(target);
               return GoogleMap(
-                  mapType: MapType.normal,
-                  initialCameraPosition: CameraPosition(
-                    target: target,
-                    zoom: 14.4746,
-                  ),
-                  onMapCreated: (GoogleMapController controller) {
-                    _controller.complete(controller);
-                  },
-                  markers: {
-                    Marker(
-                      markerId: const MarkerId('current'),
-                      position: target,
-                    ),
-                  });
+                mapType: MapType.normal,
+                initialCameraPosition: CameraPosition(
+                  target: target,
+                  zoom: 14.4746,
+                ),
+                onMapCreated: (GoogleMapController controller) {
+                  _controller.complete(controller);
+                },
+              );
             }
 
             return const Center(
