@@ -31,7 +31,6 @@ class MapState extends State<MapComponent> {
             if (snapshot.connectionState == ConnectionState.done &&
                 position != null) {
               var target = LatLng(position.latitude, position.longitude);
-              print(target);
               return GoogleMap(
                 mapType: MapType.normal,
                 initialCameraPosition: CameraPosition(
@@ -40,6 +39,12 @@ class MapState extends State<MapComponent> {
                 ),
                 onMapCreated: (GoogleMapController controller) {
                   _controller.complete(controller);
+                },
+                markers: {
+                  Marker(
+                    markerId: const MarkerId('current_location'),
+                    position: target,
+                  ),
                 },
               );
             }

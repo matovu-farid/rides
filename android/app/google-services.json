@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "59869034794",
+    "firebase_url": "https://rides-c0fd3-default-rtdb.firebaseio.com",
+    "project_id": "rides-c0fd3",
+    "storage_bucket": "rides-c0fd3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:59869034794:android:3752d70ff303b485080653",
+        "android_client_info": {
+          "package_name": "com.example.rides"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "59869034794-upvvubjkfvb0arbklbmfb2uiufo7fe8d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdFPkSJueiJO_EOrfbpscdvYbbQZaXIq8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "59869034794-upvvubjkfvb0arbklbmfb2uiufo7fe8d.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "59869034794-fgr34e3mn73vrdk3j3iua6e255jsbd78.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.rides"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:59869034794:android:e45db12b4aa27091080653",
+        "android_client_info": {
+          "package_name": "com.farid.rides"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "59869034794-upvvubjkfvb0arbklbmfb2uiufo7fe8d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdFPkSJueiJO_EOrfbpscdvYbbQZaXIq8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "59869034794-upvvubjkfvb0arbklbmfb2uiufo7fe8d.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "59869034794-fgr34e3mn73vrdk3j3iua6e255jsbd78.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.rides"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

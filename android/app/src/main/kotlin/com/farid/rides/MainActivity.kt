@@ -1,4 +1,4 @@
-package com.example.rides
+package com.farid.rides
 
 import io.flutter.embedding.android.FlutterActivity
 
