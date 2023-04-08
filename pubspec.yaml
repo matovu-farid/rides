@@ -41,6 +41,7 @@ dependencies:
   change_app_package_name: ^1.1.0
   geolocator: ^9.0.2
   geoflutterfire2: ^2.3.12
+  provider: ^6.0.5
 
 dev_dependencies:
   flutter_test:

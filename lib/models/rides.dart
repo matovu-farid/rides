@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:geoflutterfire2/geoflutterfire2.dart';
+import 'package:rides/models/center_location.dart';
 
 class Ride {
   String make;
@@ -42,13 +43,14 @@ class Ride {
   }
 }
 
-Stream<List<DocumentSnapshot>> fetchNeighbors(Position center, double radius) {
+Stream<List<DocumentSnapshot>> fetchNeighbors(
+    CenterLocation center, double radius) {
   FirebaseFirestore firestore = FirebaseFirestore.instance;
   final geo = GeoFlutterFire();
   CollectionReference neighboursRef = firestore.collection('neighbours');
 
   GeoFirePoint centerPoint =
-      geo.point(latitude: center.latitude, longitude: center.longitude);
+      geo.point(latitude: center.latitude!, longitude: center.longitude!);
   Stream<List<DocumentSnapshot>> stream = geo
       .collection(collectionRef: neighboursRef)
       .within(

@@ -1,21 +1,22 @@
 import 'dart:async';
-import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:provider/provider.dart';
+import 'package:rides/models/center_location.dart';
 import 'package:rides/models/rides.dart';
 import 'package:rides/utils/location/calc_distance.dart';
 
 class MapFigure extends StatefulWidget {
   const MapFigure({
     Key? key,
-    required this.center,
+    // required this.center,
     required this.neighbours,
     required this.icons,
   }) : super(key: key);
 
-  final Position center;
+  //final Position center;
   final List<Ride> neighbours;
   final List<BitmapDescriptor> icons;
 
@@ -40,12 +41,14 @@ class _MapFigureState extends State<MapFigure> {
 
   @override
   Widget build(BuildContext context) {
+    var center = context.watch<CenterLocation>();
     return GoogleMap(
       mapType: MapType.normal,
+      myLocationEnabled: true,
       initialCameraPosition: CameraPosition(
         target: LatLng(
-          widget.center.latitude,
-          widget.center.longitude,
+          center.latitude!,
+          center.longitude!,
         ),
         zoom: 13,
       ),
@@ -54,11 +57,15 @@ class _MapFigureState extends State<MapFigure> {
       },
       markers: {
         Marker(
+          draggable: true,
           markerId: const MarkerId('current_location'),
           position: LatLng(
-            widget.center.latitude,
-            widget.center.longitude,
+            center.latitude!,
+            center.longitude!,
           ),
+          onDrag: (value) {
+            center.updateLocation(value);
+          },
         ),
         for (Ride neighbour in widget.neighbours)
           Marker(
@@ -70,7 +77,7 @@ class _MapFigureState extends State<MapFigure> {
             infoWindow: InfoWindow(
               title: neighbour.name,
               snippet:
-                  " make: ${neighbour.make}\n model: ${neighbour.model}\n size: ${neighbour.size}\n distance: ${calculateDistance(widget.center, neighbour)} km \n location: ${neighbour.latitude}, ${neighbour.longitude}",
+                  " make: ${neighbour.make}\n model: ${neighbour.model}\n size: ${neighbour.size}\n distance: ${calculateDistance(center, neighbour)} km \n location: ${neighbour.latitude}, ${neighbour.longitude}",
             ),
             icon: getIcon(neighbour),
           )
