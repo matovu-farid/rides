@@ -1,0 +1,122 @@
+[
+  {
+    "make": "fuel",
+    "size": "small",
+    "name": "Toyota Yaris",
+    "model": "LE"
+  },
+  {
+    "make": "electric",
+    "size": "big",
+    "name": "Tesla Model X",
+    "model": "Plaid"
+  },
+  {
+    "make": "fuel",
+    "size": "big",
+    "name": "Chevrolet Suburban",
+    "model": "Premier"
+  },
+  {
+    "make": "electric",
+    "size": "small",
+    "name": "Nissan Leaf",
+    "model": "S"
+  },
+  {
+    "make": "fuel",
+    "size": "small",
+    "name": "Honda Fit",
+    "model": "LX"
+  },
+  {
+    "make": "fuel",
+    "size": "big",
+    "name": "Ford Expedition",
+    "model": "Limited"
+  },
+  {
+    "make": "electric",
+    "size": "small",
+    "name": "Volkswagen e-Golf",
+    "model": "SEL"
+  },
+  {
+    "make": "fuel",
+    "size": "big",
+    "name": "GMC Yukon",
+    "model": "SLT"
+  },
+  {
+    "make": "fuel",
+    "size": "small",
+    "name": "Mazda 3",
+    "model": "Sport"
+  },
+  {
+    "make": "electric",
+    "size": "big",
+    "name": "Rivian R1T",
+    "model": "Launch Edition"
+  },
+  {
+    "make": "fuel",
+    "size": "big",
+    "name": "Jeep Grand Cherokee",
+    "model": "Overland"
+  },
+  {
+    "make": "electric",
+    "size": "small",
+    "name": "BMW i3",
+    "model": "s"
+  },
+  {
+    "make": "fuel",
+    "size": "small",
+    "name": "Hyundai Accent",
+    "model": "SE"
+  },
+  {
+    "make": "fuel",
+    "size": "big",
+    "name": "Dodge Durango",
+    "model": "GT"
+  },
+  {
+    "make": "electric",
+    "size": "big",
+    "name": "Audi e-tron",
+    "model": "Prestige"
+  },
+  {
+    "make": "fuel",
+    "size": "small",
+    "name": "Kia Rio",
+    "model": "LX"
+  },
+  {
+    "make": "fuel",
+    "size": "big",
+    "name": "Ram 1500",
+    "model": "Laramie"
+  },
+  {
+    "make": "electric",
+    "size": "small",
+    "name": "Chevrolet Bolt",
+    "model": "Premier"
+  },
+  {
+    "make": "fuel",
+    "size": "big",
+    "name": "Toyota Sequoia",
+    "model": "TRD Pro"
+  },
+  {
+    "make": "electric",
+    "size": "big",
+    "name": "Ford F-150 Lightning",
+    "model": "Lariat"
+  }
+]
