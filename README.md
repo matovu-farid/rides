@@ -37,10 +37,10 @@ Get the dependencies and run the project
 
 ## Keys to the map
 
-Fueled small car - ![Fueled small car](assets/car.png)
-Fueled big car - ![Fueled big car](assets/truck.png)
-Electric small car - ![Electric small car](assets/electriccar.png)
-Electric big car - ![Electric big car](assets/electrictruck.png)
+- Fueled small car - ![Fueled small car](assets/car.png)
+- Fueled big car - ![Fueled big car](assets/truck.png)
+- Electric small car - ![Electric small car](assets/electriccar.png)
+- Electric big car - ![Electric big car](assets/electrictruck.png)
 
 ## Author
 
