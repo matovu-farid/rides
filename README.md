@@ -1,16 +1,55 @@
-# rides
+# Rides 🚗
 
-A new Flutter project.
+Hi there 👋, you are viewing the rides app. This project is an app that fetches rides that are near the current User's location and displays them. It differentiates the nearby rides by their given category.
+
+## Technology Used
+
+- Flutter
+- Firebase
+- Googlemaps
+
+## A link to the app is available here
+
+[app](https://play.google.com/apps/internaltest/4701342705413005100)
+
+## A small demo video can be found here
+
+![demo](https://youtube.com/shorts/Vf8QtloBxA0?feature=share)
+
+## Prerequisites
+
+You need flutter installed before running this project
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Clone the repo
 
-A few resources to get you started if this is your first Flutter project:
+```bash
+git clone https://github.com/matovu-farid/rides.git
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Get the dependencies and run the project
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+  flutter pub get
+  flutter pub run
+```
+
+## Keys to the map
+
+Fueled small car - ![Fueled small car](assets/car.png)
+Fueled big car - ![Fueled big car](assets/truck.png)
+Electric small car - ![Electric small car](assets/electriccar.png)
+Electric big car - ![Electric big car](assets/electrictruck.png)
+
+## Author
+
+👤 **Matovu Farid Nkoba**
+
+- GitHub: [@matovu-farid](https://github.com/matovu-farid)
+- Twitter: [@matovu100](https://twitter.com/matovu100)
+- LinkedIn: [matovu-farid](https://www.linkedin.com/in/matovu-farid-48b80257)
+
+## Show your support
+
+Give a ⭐️ if you like this project!
