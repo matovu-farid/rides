@@ -1,11 +1,24 @@
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:flutter/material.dart';
+import 'package:rides/components/ride_info.dart';
+import 'package:rides/components/rides_wrapper.dart';
 
 class RidesPage extends StatelessWidget {
   const RidesPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Nearby Rides'),
+      ),
+      body: RidesWrapper(
+        builder: (neighbours) => ListView.builder(
+            itemBuilder: (context, index) {
+              var ride = neighbours[index];
+              return RideInfo(ride);
+            },
+            itemCount: neighbours.length),
+      ),
+    );
   }
 }

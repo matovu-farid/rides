@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:rides/components/map.dart';
 import 'package:rides/firebase_options.dart';
 import 'package:rides/models/center_location.dart';
+import 'package:rides/models/rides_model.dart';
 import 'package:rides/routes.dart';
 import 'package:rides/screens/home.dart';
 import 'package:rides/screens/map.dart';
@@ -30,8 +31,13 @@ class MyApp extends StatelessWidget {
     //     .readAsString()
     //     .then((value) => createData(100, value));
 
-    return ChangeNotifierProvider<CenterLocation>(
-      create: (context) => CenterLocation()..updateCurrent(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<CenterLocation>(
+          create: (context) => CenterLocation()..updateCurrent(),
+        ),
+        ChangeNotifierProvider<RidesModel>(create: (context) => RidesModel())
+      ],
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:rides/components/custom_icon.dart';
 import 'package:rides/routes.dart';
 
@@ -35,11 +34,22 @@ class MyHomePage extends StatelessWidget {
                     leading: CustomIcon(assetPath: iconData['path']!, size: 60),
                   ),
                 ),
-              OutlinedButton(
-                onPressed: () {
-                  Navigator.of(context).pushNamed(AppRoutes.map);
-                },
-                child: const Text('View Map'),
+              ButtonBar(
+                alignment: MainAxisAlignment.center,
+                children: [
+                  OutlinedButton(
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(AppRoutes.map);
+                    },
+                    child: const Text('View Map'),
+                  ),
+                  OutlinedButton(
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(AppRoutes.rides);
+                    },
+                    child: const Text('Near Rides'),
+                  ),
+                ],
               ),
             ],
           ),

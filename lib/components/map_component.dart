@@ -6,18 +6,17 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:rides/models/center_location.dart';
 import 'package:rides/models/rides.dart';
+import 'package:rides/models/rides_model.dart';
 import 'package:rides/utils/location/calc_distance.dart';
 
 class MapFigure extends StatefulWidget {
   const MapFigure({
     Key? key,
     // required this.center,
-    required this.neighbours,
+
     required this.icons,
   }) : super(key: key);
 
-  //final Position center;
-  final List<Ride> neighbours;
   final List<BitmapDescriptor> icons;
 
   @override
@@ -42,6 +41,7 @@ class _MapFigureState extends State<MapFigure> {
   @override
   Widget build(BuildContext context) {
     var center = context.watch<CenterLocation>();
+    var neighbours = context.watch<RidesModel>().rides!;
     return GoogleMap(
       mapType: MapType.normal,
       myLocationEnabled: true,
@@ -67,7 +67,7 @@ class _MapFigureState extends State<MapFigure> {
             center.updateLocation(value);
           },
         ),
-        for (Ride neighbour in widget.neighbours)
+        for (Ride neighbour in neighbours)
           Marker(
             markerId: MarkerId(neighbour.id),
             position: LatLng(
@@ -77,7 +77,7 @@ class _MapFigureState extends State<MapFigure> {
             infoWindow: InfoWindow(
               title: neighbour.name,
               snippet:
-                  " make: ${neighbour.make}\n model: ${neighbour.model}\n size: ${neighbour.size}\n distance: ${calculateDistance(center, neighbour)} km \n location: ${neighbour.latitude}, ${neighbour.longitude}",
+                  " make: ${neighbour.make}\n model: ${neighbour.model}\n size: ${neighbour.size}\n dist (km): ${calculateDistance(center, neighbour)}",
             ),
             icon: getIcon(neighbour),
           )
