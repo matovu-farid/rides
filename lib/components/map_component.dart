@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 import 'package:rides/models/center_location.dart';
 import 'package:rides/models/rides.dart';
 import 'package:rides/models/rides_model.dart';
+import 'package:rides/screens/ride.dart';
 import 'package:rides/utils/location/calc_distance.dart';
 
 class MapFigure extends StatefulWidget {
@@ -84,6 +85,11 @@ class _MapFigureState extends State<MapFigure> {
                       " make: ${neighbour.make}\n model: ${neighbour.model}\n size: ${neighbour.size}\n dist (km): ${calculateDistance(center, neighbour)}",
                 ),
                 icon: getIcon(neighbour),
+                onTap: () => Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => RidePage(ride: neighbour),
+                  ),
+                ),
               )
           },
         ),
