@@ -32,7 +32,7 @@ Get the dependencies and run the project
 
 ```bash
   flutter pub get
-  flutter pub run
+  flutter run
 ```
 
 ## Keys to the map
