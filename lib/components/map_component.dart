@@ -38,50 +38,89 @@ class _MapFigureState extends State<MapFigure> {
     }
   }
 
+  double zoom = 13;
+
   @override
   Widget build(BuildContext context) {
     var center = context.watch<CenterLocation>();
     var neighbours = context.watch<RidesModel>().rides!;
-    return GoogleMap(
-      mapType: MapType.normal,
-      myLocationEnabled: true,
-      initialCameraPosition: CameraPosition(
-        target: LatLng(
-          center.latitude!,
-          center.longitude!,
-        ),
-        zoom: 13,
-      ),
-      onMapCreated: (GoogleMapController controller) {
-        _controller.complete(controller);
-      },
-      markers: {
-        Marker(
-          draggable: true,
-          markerId: const MarkerId('current_location'),
-          position: LatLng(
-            center.latitude!,
-            center.longitude!,
+    return Stack(
+      children: [
+        GoogleMap(
+          mapType: MapType.normal,
+          myLocationEnabled: true,
+          initialCameraPosition: CameraPosition(
+            target: LatLng(
+              center.latitude!,
+              center.longitude!,
+            ),
+            zoom: zoom,
           ),
-          onDrag: (value) {
-            center.updateLocation(value);
+          onMapCreated: (GoogleMapController controller) {
+            _controller.complete(controller);
+          },
+          markers: {
+            Marker(
+              draggable: true,
+              markerId: const MarkerId('current_location'),
+              position: LatLng(
+                center.latitude!,
+                center.longitude!,
+              ),
+              onDrag: (value) {
+                center.updateLocation(value);
+              },
+            ),
+            for (Ride neighbour in neighbours)
+              Marker(
+                markerId: MarkerId(neighbour.id),
+                position: LatLng(
+                  neighbour.latitude,
+                  neighbour.longitude,
+                ),
+                infoWindow: InfoWindow(
+                  title: neighbour.name,
+                  snippet:
+                      " make: ${neighbour.make}\n model: ${neighbour.model}\n size: ${neighbour.size}\n dist (km): ${calculateDistance(center, neighbour)}",
+                ),
+                icon: getIcon(neighbour),
+              )
           },
         ),
-        for (Ride neighbour in neighbours)
-          Marker(
-            markerId: MarkerId(neighbour.id),
-            position: LatLng(
-              neighbour.latitude,
-              neighbour.longitude,
-            ),
-            infoWindow: InfoWindow(
-              title: neighbour.name,
-              snippet:
-                  " make: ${neighbour.make}\n model: ${neighbour.model}\n size: ${neighbour.size}\n dist (km): ${calculateDistance(center, neighbour)}",
-            ),
-            icon: getIcon(neighbour),
-          )
-      },
+        // Update zoom
+        Positioned(
+          top: 10,
+          right: 10,
+          child: FloatingActionButton(
+            onPressed: () async {
+              final GoogleMapController controller = await _controller.future;
+              controller.animateCamera(
+                CameraUpdate.zoomIn(),
+              );
+              setState(() {
+                zoom++;
+              });
+            },
+            child: const Icon(Icons.add),
+          ),
+        ),
+        Positioned(
+          top: 70,
+          right: 10,
+          child: FloatingActionButton(
+            onPressed: () async {
+              final GoogleMapController controller = await _controller.future;
+              controller.animateCamera(
+                CameraUpdate.zoomOut(),
+              );
+              setState(() {
+                zoom--;
+              });
+            },
+            child: const Icon(Icons.remove),
+          ),
+        ),
+      ],
     );
   }
 }

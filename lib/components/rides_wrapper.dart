@@ -7,7 +7,7 @@ import 'package:rides/models/rides.dart';
 import 'package:rides/models/rides_model.dart';
 
 class RidesWrapper extends StatelessWidget {
-  final Widget Function(List<Ride> rides) builder;
+  final Widget Function(List<Ride> rides, CenterLocation center) builder;
 
   const RidesWrapper({
     super.key,
@@ -25,7 +25,7 @@ class RidesWrapper extends StatelessWidget {
               child: CircularProgressIndicator(),
             );
           }
-          return builder(model.rides!);
+          return builder(model.rides!, center);
         });
       }
 

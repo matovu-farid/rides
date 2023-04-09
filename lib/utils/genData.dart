@@ -63,7 +63,7 @@ void createData(int limit, String input) async {
     var car = cars[Random().nextInt(cars.length)];
 
     // generatePoint in Uganda
-    var point = generatePoint(0.2, 0.4, 32.0, 34.0, 6);
+    var point = generatePoint(-4.5, 1.6, 29.2, 35.2, 6);
 
     GeoFirePoint myLocation =
         geo.point(latitude: point[0], longitude: point[1]);

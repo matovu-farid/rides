@@ -18,22 +18,25 @@ class MyHomePage extends StatelessWidget {
           title: const Text('Welcome'),
         ),
         body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+          child: ListView(
             children: [
               const Center(
                   child: Text(
-                'Keys to map',
+                'Instructions',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               )),
-              for (var iconData in iconDataSet)
-                Card(
-                  child: ListTile(
-                    title: Text(iconData['key']!,
-                        style: const TextStyle(fontSize: 16)),
-                    leading: CustomIcon(assetPath: iconData['path']!, size: 60),
-                  ),
-                ),
+              const ListTile(
+                title: Text(
+                    'Click the "View Map" button to see the map with the nearest rides.'),
+              ),
+              const ListTile(
+                title: Text(
+                    'Click the "Near rides" button to see the details with the nearest rides.'),
+              ),
+              const ListTile(
+                title: Text(
+                    'The key helps you to understand the icons on the map.'),
+              ),
               ButtonBar(
                 alignment: MainAxisAlignment.center,
                 children: [
@@ -51,6 +54,19 @@ class MyHomePage extends StatelessWidget {
                   ),
                 ],
               ),
+              const Center(
+                  child: Text(
+                'Keys to map',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              )),
+              for (var iconData in iconDataSet)
+                Card(
+                  child: ListTile(
+                    title: Text(iconData['key']!,
+                        style: const TextStyle(fontSize: 16)),
+                    leading: CustomIcon(assetPath: iconData['path']!, size: 60),
+                  ),
+                ),
             ],
           ),
         ));

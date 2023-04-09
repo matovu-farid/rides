@@ -12,7 +12,7 @@ class RidesPage extends StatelessWidget {
         title: const Text('Nearby Rides'),
       ),
       body: RidesWrapper(
-        builder: (neighbours) => ListView.builder(
+        builder: (neighbours, _) => ListView.builder(
             itemBuilder: (context, index) {
               var ride = neighbours[index];
               return RideInfo(ride);

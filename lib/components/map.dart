@@ -33,7 +33,7 @@ class MapState extends State<MapComponent> {
   Widget build(BuildContext context) {
     final ImageConfiguration imageConfiguration =
         createLocalImageConfiguration(context, size: const Size.square(48));
-    return RidesWrapper(builder: (_) {
+    return RidesWrapper(builder: (_, __) {
       return FutureBuilder<List<BitmapDescriptor>>(
           future: getIcons(imageConfiguration),
           builder: (context, snapshot) {

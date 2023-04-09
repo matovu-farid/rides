@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // File('/Users/faridmatovu/projects/rides/assets/data.json')
     //     .readAsString()
-    //     .then((value) => createData(100, value));
+    //     .then((value) => createData(600, value));
 
     return MultiProvider(
       providers: [
