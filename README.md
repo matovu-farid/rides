@@ -44,10 +44,10 @@ Get the dependencies and run the project
 
 ## Screenshots
 
-![](screenshots/homepage.png)
-![](screenshots/maps.png)
-![](screenshots/details.png)
-![](screenshots/near.png)
+![homepage](screenshots/homepage.png)
+![maps](screenshots/maps.png)
+![details](screenshots/details.png)
+![near by](screenshots/near.png)
 
 ## Author
 
