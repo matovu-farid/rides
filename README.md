@@ -14,7 +14,7 @@ Hi there 👋, you are viewing the rides app. This project is an app that fetche
 
 ## A small demo video can be found here
 
-![demo](https://youtube.com/shorts/Vf8QtloBxA0?feature=share)
+[demo](https://youtube.com/shorts/Vf8QtloBxA0?feature=share)
 
 ## Prerequisites
 
@@ -41,6 +41,13 @@ Get the dependencies and run the project
 - Fueled big car - ![Fueled big car](assets/truck.png)
 - Electric small car - ![Electric small car](assets/electriccar.png)
 - Electric big car - ![Electric big car](assets/electrictruck.png)
+
+## Screenshots
+
+![](screenshots/homepage.png)
+![](screenshots/maps.png)
+![](screenshots/details.png)
+![](screenshots/near.png)
 
 ## Author
 
